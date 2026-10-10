@@ -1,0 +1,496 @@
+/* scarletstyle.css - GOLD EDITION */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    /* Глубокий темный фон (почти черный с синим отливом) */
+    background: #0b0c10;
+    color: #FFF9FA;
+    overflow-x: hidden;
+}
+
+/* Золотое свечение вместо красного */
+body::before {
+    content: "";
+    position: fixed;
+    left: 50%;
+    top: 220px;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 450px;
+    /* Янтарно-золотой цвет свечения */
+    background: #fbbf24;
+    filter: blur(220px);
+    opacity: .15; /* Чуть меньше прозрачности, так как золото ярче */
+    z-index: -1;
+    pointer-events: none;
+}
+
+/*====================*/
+/* HEADER & NAV       */
+/*====================*/
+
+header {
+    width: 1200px;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 34px;
+    font-weight: 800;
+    /* Логотип теперь золотой */
+    color: #fbbf24;
+}
+
+.logo span {
+    color: white;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #A9A9A9;
+    transition: .3s;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    /* При наведении текст становится ярко-желтым */
+    color: #fcd34d;
+}
+
+/*====================*/
+/* HERO SECTION       */
+/*====================*/
+
+.hero {
+    width: 1200px;
+    margin: auto;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-left {
+    width: 520px;
+}
+
+.tag {
+    display: inline-block;
+    /* Фон тега - очень темный серо-синий */
+    background: #1f2937;
+    /* Текст тега - золотой */
+    color: #fbbf24;
+    /* Граница - приглушенное золото */
+    border: 1px solid #78350f;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hero h1 {
+    font-size: 72px;
+    line-height: 78px;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+.hero p {
+    color: #BDBDBD;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 45px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    padding: 18px 40px;
+    border-radius: 15px;
+    font-family: Poppins;
+    font-size: 17px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.primary {
+    /* Основная кнопка - насыщенный золотой/янтарный */
+    background: #fbbf24;
+    /* Текст на золотой кнопке лучше делать темным для контраста */
+    color: #0f172a;
+    box-shadow: 0 0 30px rgba(251, 191, 36, .4);
+}
+
+.primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 50px rgba(251, 191, 36, .7);
+    background: #fcd34d;
+}
+
+.secondary {
+    background: #1f2937;
+    color: white;
+    border: 1px solid #78350f;
+}
+
+.secondary:hover {
+    border-color: #fbbf24;
+    color: #fcd34d;
+    transform: translateY(-5px);
+}
+
+/*====================*/
+/* HERO RIGHT CARD    */
+/*====================*/
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 420px;
+    height: 420px;
+    background: #1f2937; /* Темный серо-синий фон карточки */
+    border: 1px solid #78350f; /* Тонкая коричневато-золотая граница */
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, .5);
+}
+
+.circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    /* Круг теперь золотой, как на иконке :has() */
+    background: #fbbf24;
+    box-shadow:
+        0 0 50px #fbbf24,
+        0 0 120px rgba(251, 191, 36, .35);
+    margin-bottom: 35px;
+}
+
+.card h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.card p {
+    color: #9c9c9c;
+    font-size: 16px;
+}
+
+/* Блок кода внутри карточки */
+.code {
+    background: #0b0c10;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    font-family: monospace;
+    /* Код подсвечен светло-желтым */
+    color: #fcd34d;
+    font-size: 18px;
+    line-height: 32px;
+    border: 1px solid #78350f;
+}
+
+/*====================*/
+/* FEATURES GRID      */
+/*====================*/
+
+.features {
+    width: 1200px;
+    margin: 120px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature {
+    background: #1f2937;
+    border: 1px solid #78350f;
+    border-radius: 25px;
+    padding: 40px;
+    transition: .35s;
+}
+
+.feature:hover {
+    transform: translateY(-8px);
+    border-color: #fbbf24;
+    box-shadow: 0 0 30px rgba(251, 191, 36, .25);
+}
+
+.feature h3 {
+    /* Заголовки золотые */
+    color: #fbbf24;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.feature p {
+    color: #CFCFCF;
+    line-height: 28px;
+    font-size: 15px;
+}
+
+/* Списки внутри карточек */
+.feature ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.feature li {
+    color: #CFCFCF;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+    font-size: 15px;
+}
+
+.feature li::before {
+    content: "•";
+    color: #fbbf24; /* Золотой маркер */
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Примеры кода внутри карточек */
+.code-example {
+    background: #0b0c10;
+    border: 1px solid #78350f;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #fcd34d;
+    line-height: 1.7;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+/*====================*/
+/* TAGS REFERENCE     */
+/*====================*/
+
+#tags-reference {
+    width: 1200px;
+    margin: 60px auto;
+}
+
+.tag-category {
+    margin-bottom: 30px;
+}
+
+.tag-category:last-child {
+    margin-bottom: 0;
+}
+
+.tag-category h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fbbf24;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #78350f;
+    letter-spacing: 0.3px;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag-item {
+    background: #111827;
+    border: 1px solid #78350f;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #e0e0e0;
+    transition: .3s;
+    cursor: default;
+}
+
+.tag-item:hover {
+    border-color: #fbbf24;
+    color: #fcd34d;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(251, 191, 36, .2);
+    background: #1f2937;
+}
+
+/*====================*/
+/* THEMES SECTION     */
+/*====================*/
+
+#themes {
+    width: 1200px;
+    margin: 120px auto;
+}
+
+.thems {
+    background: #1f2937;
+    border: 1px solid #78350f;
+    border-radius: 25px;
+    padding: 40px;
+}
+
+.thems h2 {
+    margin-bottom: 30px;
+    color: #fbbf24;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.theme-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.theme-buttons button {
+    background: #0b0c10;
+    color: white;
+    border: 1px solid #78350f;
+    padding: 16px 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: .3s;
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.theme-buttons button:hover {
+    background: #fbbf24;
+    color: #0f172a; /* Темный текст на светлой кнопке */
+    border-color: #fbbf24;
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(251, 191, 36, .5);
+}
+
+/*====================*/
+/* RESPONSIVE         */
+/*====================*/
+
+@media (max-width: 1250px) {
+    header,
+    .hero,
+    .features,
+    #tags-reference,
+    #themes {
+        width: 92%;
+        max-width: 1200px;
+    }
+
+    .hero {
+        flex-direction: column;
+        height: auto;
+        gap: 50px;
+        padding: 60px 0;
+    }
+
+    .hero-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 52px;
+        line-height: 60px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 38px;
+        line-height: 46px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+        min-height: 320px;
+    }
+
+    .circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .card h2 {
+        font-size: 30px;
+    }
+
+    .theme-buttons {
+        flex-direction: column;
+    }
+
+    .theme-buttons button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .tag-item {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
