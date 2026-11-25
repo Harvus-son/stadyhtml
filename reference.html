@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101713">
+  <meta name="description" content="Практический курс HTML, CSS и JavaScript: понятные уроки, задания, редактор кода и проекты.">
+  <title>WebStart — HTML, CSS и JavaScript</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home"><span class="brand-mark">&lt;/&gt;</span><span>web<span class="brand-accent">start</span><small>ПРАКТИЧЕСКИЙ КУРС</small></span></a>
+      <div class="side-caption">ТВОЙ МАРШРУТ</div>
+      <div class="progress-card">
+        <div class="progress-top"><span>Прогресс курса</span><strong id="progress-value">0%</strong></div>
+        <div class="progress-track"><span id="progress-fill"></span></div>
+        <small id="progress-note">Начни с первого урока</small>
+      </div>
+      <nav class="lesson-nav" id="lesson-nav" aria-label="Уроки курса"></nav>
+      <div class="sidebar-bottom"><span class="online-dot"></span> Учись в своём темпе</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menu-toggle" aria-label="Открыть меню">☰</button>
+        <div class="breadcrumbs">WebStart <span>/</span> <b id="breadcrumb">Главная</b></div>
+        <div class="top-actions"><span class="level-label">ОТ НУЛЯ ДО ПРОЕКТА</span><button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">☼</button></div>
+      </header>
+
+      <section class="welcome" id="home-view">
+        <div class="welcome-copy">
+          <div class="eyebrow"><span></span> HTML · CSS · JAVASCRIPT</div>
+          <h1>Создавай сайты.<br><em>Понимай</em> каждый шаг.</h1>
+          <p>Последовательный курс веб-разработки: сначала структура страницы, затем её внешний вид и только потом интерактивность. Теория сразу закрепляется практикой.</p>
+          <div class="welcome-actions"><button class="btn btn-primary" id="start-button">Начать обучение <span>↗</span></button><a class="text-link" href="#roadmap">Посмотреть программу →</a></div>
+          <div class="welcome-meta"><span>◷ В удобном темпе</span><span>⌘ Практика в каждом разделе</span></div>
+        </div>
+        <div class="preview-art">
+          <div class="browser-window">
+            <div class="browser-bar"><i></i><i></i><i></i><span>my-first-site.html</span></div>
+            <div class="browser-code"><div><b>01</b> <span class="pink">&lt;main&gt;</span></div><div><b>02</b>　<span class="pink">&lt;h1&gt;</span><span class="mint">Привет, веб!</span><span class="pink">&lt;/h1&gt;</span></div><div><b>03</b>　<span class="pink">&lt;p&gt;</span>Мой первый сайт<span class="pink">&lt;/p&gt;</span></div><div><b>04</b> <span class="pink">&lt;/main&gt;</span></div></div>
+            <div class="browser-result"><span class="result-label">ПРЕДПРОСМОТР</span><h2>Привет, веб!</h2><p>Мой первый сайт</p><span class="result-button">Моя первая кнопка</span></div>
+          </div>
+          <div class="floating-note"><span>✓</span><div><b>От идеи к результату</b><small>Один урок за раз</small></div></div>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div><span class="stat-icon html-icon">&lt;&gt;</span><strong>HTML</strong><small>Структура сайта</small></div>
+        <div><span class="stat-icon css-icon">✳</span><strong>CSS</strong><small>Внешний вид</small></div>
+        <div><span class="stat-icon js-icon">JS</span><strong>JavaScript</strong><small>Интерактивность</small></div>
+        <div><span class="stat-icon practice-icon">✓</span><strong>Практика</strong><small>Свои мини-проекты</small></div>
+      </section>
+
+      <section class="roadmap section" id="roadmap">
+        <div class="section-heading"><div><div class="eyebrow">ПРОГРАММА ОБУЧЕНИЯ</div><h2>Три шага к <em>своему сайту.</em></h2></div><p>Не нужно изучать всё одновременно. Каждый следующий этап опирается на уже знакомые знания.</p></div>
+        <div class="path-grid">
+          <article class="path-card path-html"><div class="path-top"><span>01</span><b>ОСНОВА</b></div><div class="path-symbol">&lt;/&gt;</div><h3>HTML</h3><p>Научись создавать понятную структуру: заголовки, текст, изображения, ссылки, списки и формы.</p><div class="path-tags"><span>Теги</span><span>Семантика</span><span>Формы</span></div><button data-first="0">Перейти к HTML →</button></article>
+          <article class="path-card path-css"><div class="path-top"><span>02</span><b>ОФОРМЛЕНИЕ</b></div><div class="path-symbol">✳</div><h3>CSS</h3><p>Добавь цвета, шрифты, отступы и научись строить адаптивные макеты для разных экранов.</p><div class="path-tags"><span>Селекторы</span><span>Flexbox</span><span>Grid</span></div><button data-first="4">Перейти к CSS →</button></article>
+          <article class="path-card path-js"><div class="path-top"><span>03</span><b>ИНТЕРАКТИВНОСТЬ</b></div><div class="path-symbol">JS</div><h3>JavaScript</h3><p>Добавь события, реакции на действия пользователя и первые динамические возможности.</p><div class="path-tags"><span>Переменные</span><span>События</span><span>DOM</span></div><button data-first="8">Перейти к JavaScript →</button></article>
+        </div>
+      </section>
+
+      <section class="workspace section" id="practice">
+        <div class="section-heading"><div><div class="eyebrow">ИНТЕРАКТИВНАЯ ПРАКТИКА</div><h2>Пиши код и <em>смотри результат.</em></h2></div><p>Попробуй изменить пример. Нажми «Запустить», чтобы увидеть результат в окне справа.</p></div>
+        <div class="editor">
+          <div class="editor-head"><div><span class="editor-dot"></span> РЕДАКТОР КОДА</div><button id="reset-code">Сбросить пример ↺</button></div>
+          <div class="editor-grid"><div class="code-side"><label for="code-input">HTML / CSS / JS</label><textarea id="code-input" spellcheck="false" aria-label="Редактор HTML кода"></textarea><div class="editor-actions"><button class="btn btn-primary" id="run-code">▶ Запустить</button><span id="run-status">Готов к запуску</span></div></div><div class="output-side"><div class="output-label">ПРЕДПРОСМОТР</div><iframe id="preview-frame" title="Предпросмотр результата" sandbox="allow-scripts"></iframe></div></div>
+        </div>
+      </section>
+
+      <section class="section projects">
+        <div class="section-heading"><div><div class="eyebrow">ЧТО ТЫ СОЗДАШЬ</div><h2>Знания превращаются в <em>проекты.</em></h2></div><p>Закрепляй темы на небольших работах и постепенно собирай собственное портфолио.</p></div>
+        <div class="project-grid"><article><span>01 / HTML</span><h3>Страница о себе</h3><p>Структура, заголовки, изображения и ссылки.</p></article><article><span>02 / HTML + CSS</span><h3>Карточка профиля</h3><p>Цвета, типографика, отступы и адаптивность.</p></article><article><span>03 / HTML + CSS + JS</span><h3>Интерактивный список</h3><p>Кнопки, события и изменение содержимого страницы.</p></article></div>
+      </section>
+      <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">&lt;/&gt;</span><span>web<span class="brand-accent">start</span></span></a><span>Учись. Практикуйся. Создавай.</span><a href="https://github.com/Harvus-son/stadyhtml">Исходный код ↗</a></footer>
+    </main>
+  </div>
+  <div class="lesson-overlay" id="lesson-overlay" aria-hidden="true"><div class="lesson-panel"><button class="close-lesson" id="close-lesson" aria-label="Закрыть урок">×</button><div id="lesson-content"></div></div></div>
+</body>
+</html>
