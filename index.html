@@ -1,721 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML Guide</title>
-
-    <!-- Активная тема -->
-    <link id="theme" rel="stylesheet" href="limestyle.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        /* Дополнительные стили для списка тегов */
-        html { scroll-behavior: smooth; }
-
-        .tag-category {
-            margin-bottom: 20px;
-        }
-
-        .tag-category h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            opacity: 0.8;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 5px;
-        }
-
-        .tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .tag-item {
-            background: rgba(0,0,0,0.3);
-            padding: 5px 12px;
-            border-radius: 8px;
-            font-family: monospace;
-            font-size: 14px;
-            border: 1px solid transparent;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .tag-item:hover {
-            border-color: currentColor; /* Цвет берется из темы */
-            transform: translateY(-2px);
-        }
-
-        .code-example {
-            background: #000;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 15px;
-            font-family: monospace;
-            font-size: 13px;
-            color: #ccc;
-            overflow-x: auto;
-        }
-
-        /* Стили для конструктора */
-        .constructor-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .constructor-panel {
-            background: rgba(0,0,0,0.2);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .constructor-panel h3 {
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .element-buttons {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .element-btn {
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.2);
-            color: inherit;
-            padding: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Poppins', sans-serif;
-            font-size: 13px;
-        }
-
-        .element-btn:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: currentColor;
-            transform: translateY(-2px);
-        }
-
-        .properties-panel {
-            margin-top: 20px;
-        }
-
-        .property-input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            background: rgba(0,0,0,0.3);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            color: inherit;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .preview-area {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            min-height: 400px;
-            color: #333;
-            overflow-y: auto;
-            max-height: 600px;
-        }
-
-        .code-output {
-            background: #1e1e1e;
-            border-radius: 10px;
-            padding: 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 13px;
-            color: #d4d4d4;
-            overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            min-height: 200px;
-            max-height: 400px;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .action-btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-
-        .action-btn.primary {
-            background: currentColor;
-            color: #000;
-        }
-
-        .action-btn.secondary {
-            background: rgba(255,255,255,0.1);
-            color: inherit;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .action-btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-
-        .selected-element {
-            border: 2px solid currentColor !important;
-        }
-
-        @media (max-width: 1200px) {
-            .constructor-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101713">
+  <meta name="description" content="Практический курс HTML, CSS и JavaScript: понятные уроки, задания, редактор кода и проекты.">
+  <title>WebStart — HTML, CSS и JavaScript</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
-
 <body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home"><span class="brand-mark">&lt;/&gt;</span><span>web<span class="brand-accent">start</span><small>ПРАКТИЧЕСКИЙ КУРС</small></span></a>
+      <div class="side-caption">ТВОЙ МАРШРУТ</div>
+      <div class="progress-card">
+        <div class="progress-top"><span>Прогресс курса</span><strong id="progress-value">0%</strong></div>
+        <div class="progress-track"><span id="progress-fill"></span></div>
+        <small id="progress-note">Начни с первого урока</small>
+      </div>
+      <nav class="lesson-nav" id="lesson-nav" aria-label="Уроки курса"></nav>
+      <div class="sidebar-bottom"><span class="online-dot"></span> Учись в своём темпе</div>
+    </aside>
 
-<header>
-    <div class="logo">
-        HTML<span>Guide</span>
-    </div>
-    <nav>
-        <a href="#hero">Главная</a>
-        <a href="#features">Особенности</a>
-        <a href="#tags-reference">Справочник тегов</a>
-        <a href="#constructor">Конструктор</a>
-        <a href="#themes">Темы</a>
-    </nav>
-</header>
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="menu-toggle" aria-label="Открыть меню">☰</button>
+        <div class="breadcrumbs">WebStart <span>/</span> <b id="breadcrumb">Главная</b></div>
+        <div class="top-actions"><span class="level-label">ОТ НУЛЯ ДО ПРОЕКТА</span><button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">☼</button></div>
+      </header>
 
-<section class="hero" id="hero">
-    <div class="hero-left">
-        <span class="tag">HTML5 • Справочник v2.0</span>
-        <h1>Изучайте<br>HTML теги</h1>
-        <p>
-            Полный современный справочник по HTML.
-            Узнайте назначение каждого тега, его
-            атрибуты, примеры использования и лучшие
-            практики веб-разработки.
-        </p>
-        <div class="buttons">
-            <button class="primary">Начать обучение</button>
-            <button class="secondary" onclick="document.getElementById('tags-reference').scrollIntoView()">Все теги</button>
+      <section class="welcome" id="home-view">
+        <div class="welcome-copy">
+          <div class="eyebrow"><span></span> HTML · CSS · JAVASCRIPT</div>
+          <h1>Создавай сайты.<br><em>Понимай</em> каждый шаг.</h1>
+          <p>Последовательный курс веб-разработки: сначала структура страницы, затем её внешний вид и только потом интерактивность. Теория сразу закрепляется практикой.</p>
+          <div class="welcome-actions"><button class="btn btn-primary" id="start-button">Начать обучение <span>↗</span></button><a class="text-link" href="#roadmap">Посмотреть программу →</a></div>
+          <div class="welcome-meta"><span>◷ В удобном темпе</span><span>⌘ Практика в каждом разделе</span></div>
         </div>
-    </div>
-    <div class="hero-right">
-        <div class="card">
-            <div class="code">
-&lt;!DOCTYPE html&gt;<br>
-&lt;html&gt;<br>
-&nbsp;&nbsp;&lt;body&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello World!&lt;/h1&gt;<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&lt;p&gt;Welcome to HTML.&lt;/p&gt;<br>
-&nbsp;&nbsp;&lt;/body&gt;<br>
-&lt;/html&gt;
-            </div>
+        <div class="preview-art">
+          <div class="browser-window">
+            <div class="browser-bar"><i></i><i></i><i></i><span>my-first-site.html</span></div>
+            <div class="browser-code"><div><b>01</b> <span class="pink">&lt;main&gt;</span></div><div><b>02</b>　<span class="pink">&lt;h1&gt;</span><span class="mint">Привет, веб!</span><span class="pink">&lt;/h1&gt;</span></div><div><b>03</b>　<span class="pink">&lt;p&gt;</span>Мой первый сайт<span class="pink">&lt;/p&gt;</span></div><div><b>04</b> <span class="pink">&lt;/main&gt;</span></div></div>
+            <div class="browser-result"><span class="result-label">ПРЕДПРОСМОТР</span><h2>Привет, веб!</h2><p>Мой первый сайт</p><span class="result-button">Моя первая кнопка</span></div>
+          </div>
+          <div class="floating-note"><span>✓</span><div><b>От идеи к результату</b><small>Один урок за раз</small></div></div>
         </div>
-    </div>
-</section>
+      </section>
 
-<!-- Секция с примерами основных тегов -->
-<section class="features" id="features">
-    <div class="feature">
-        <h3>&lt;h1&gt; - &lt;h6&gt;</h3>
-        <p>Заголовки разных уровней. H1 — самый важный.</p>
-        <div class="code-example">&lt;h1&gt;Главный заголовок&lt;/h1&gt;<br>&lt;h2&gt;Подзаголовок&lt;/h2&gt;</div>
-    </div>
-    <div class="feature">
-        <h3>&lt;p&gt; &amp; &lt;br&gt;</h3>
-        <p>Абзацы текста и принудительный перенос строки.</p>
-        <div class="code-example">&lt;p&gt;Это абзац текста.&lt;/p&gt;<br>&lt;p&gt;Новый абзац&lt;br&gt;с переносом.&lt;/p&gt;</div>
-    </div>
-    <div class="feature">
-        <h3>&lt;a&gt; Ссылки</h3>
-        <p>Гиперссылки для навигации. Атрибут href обязателен.</p>
-        <div class="code-example">&lt;a href="https://google.com"&gt;Google&lt;/a&gt;</div>
-    </div>
-    <div class="feature">
-        <h3>&lt;img&gt; Картинки</h3>
-        <p>Вставка изображений. Всегда используйте alt.</p>
-        <div class="code-example">&lt;img src="cat.jpg" alt="Кот"&gt;</div>
-    </div>
-    <div class="feature">
-        <h3>&lt;ul&gt; &amp; &lt;ol&gt;</h3>
-        <p>Маркированные (точки) и нумерованные списки.</p>
-        <div class="code-example">&lt;ul&gt;<br>&nbsp;&nbsp;&lt;li&gt;Элемент 1&lt;/li&gt;<br>&lt;/ul&gt;</div>
-    </div>
-    <div class="feature">
-        <h3>&lt;div&gt; &amp; &lt;span&gt;</h3>
-        <p>Блочные и строчные контейнеры для группировки.</p>
-        <div class="code-example">&lt;div class="box"&gt;Блок&lt;/div&gt;<br>&lt;span style="color:red"&gt;Текст&lt;/span&gt;</div>
-    </div>
-</section>
+      <section class="stats">
+        <div><span class="stat-icon html-icon">&lt;&gt;</span><strong>HTML</strong><small>Структура сайта</small></div>
+        <div><span class="stat-icon css-icon">✳</span><strong>CSS</strong><small>Внешний вид</small></div>
+        <div><span class="stat-icon js-icon">JS</span><strong>JavaScript</strong><small>Интерактивность</small></div>
+        <div><span class="stat-icon practice-icon">✓</span><strong>Практика</strong><small>Свои мини-проекты</small></div>
+      </section>
 
-<!-- НОВАЯ СЕКЦИЯ: ПОЛНЫЙ СПРАВОЧНИК ТЕГОВ -->
-<section id="tags-reference" style="width: 1200px; margin: 60px auto;">
-    <div class="thems">
-        <h2>Полный список тегов</h2>
-        <p style="margin-bottom: 30px; color: #aaa;">Основные теги, сгруппированные по назначению:</p>
-
-        <!-- Структура документа -->
-        <div class="tag-category">
-            <h4>🏗️ Структура страницы</h4>
-            <div class="tag-list">
-                <span class="tag-item">&lt;!DOCTYPE&gt;</span>
-                <span class="tag-item">&lt;html&gt;</span>
-                <span class="tag-item">&lt;head&gt;</span>
-                <span class="tag-item">&lt;body&gt;</span>
-                <span class="tag-item">&lt;title&gt;</span>
-                <span class="tag-item">&lt;meta&gt;</span>
-                <span class="tag-item">&lt;link&gt;</span>
-                <span class="tag-item">&lt;style&gt;</span>
-                <span class="tag-item">&lt;script&gt;</span>
-            </div>
+      <section class="roadmap section" id="roadmap">
+        <div class="section-heading"><div><div class="eyebrow">ПРОГРАММА ОБУЧЕНИЯ</div><h2>Три шага к <em>своему сайту.</em></h2></div><p>Не нужно изучать всё одновременно. Каждый следующий этап опирается на уже знакомые знания.</p></div>
+        <div class="path-grid">
+          <article class="path-card path-html"><div class="path-top"><span>01</span><b>ОСНОВА</b></div><div class="path-symbol">&lt;/&gt;</div><h3>HTML</h3><p>Научись создавать понятную структуру: заголовки, текст, изображения, ссылки, списки и формы.</p><div class="path-tags"><span>Теги</span><span>Семантика</span><span>Формы</span></div><button data-first="0">Перейти к HTML →</button></article>
+          <article class="path-card path-css"><div class="path-top"><span>02</span><b>ОФОРМЛЕНИЕ</b></div><div class="path-symbol">✳</div><h3>CSS</h3><p>Добавь цвета, шрифты, отступы и научись строить адаптивные макеты для разных экранов.</p><div class="path-tags"><span>Селекторы</span><span>Flexbox</span><span>Grid</span></div><button data-first="4">Перейти к CSS →</button></article>
+          <article class="path-card path-js"><div class="path-top"><span>03</span><b>ИНТЕРАКТИВНОСТЬ</b></div><div class="path-symbol">JS</div><h3>JavaScript</h3><p>Добавь события, реакции на действия пользователя и первые динамические возможности.</p><div class="path-tags"><span>Переменные</span><span>События</span><span>DOM</span></div><button data-first="8">Перейти к JavaScript →</button></article>
         </div>
+      </section>
 
-        <!-- Семантика -->
-        <div class="tag-category">
-            <h4>🧩 Семантические блоки</h4>
-            <div class="tag-list">
-                <span class="tag-item">&lt;header&gt;</span>
-                <span class="tag-item">&lt;nav&gt;</span>
-                <span class="tag-item">&lt;main&gt;</span>
-                <span class="tag-item">&lt;section&gt;</span>
-                <span class="tag-item">&lt;article&gt;</span>
-                <span class="tag-item">&lt;aside&gt;</span>
-                <span class="tag-item">&lt;footer&gt;</span>
-                <span class="tag-item">&lt;div&gt;</span>
-                <span class="tag-item">&lt;span&gt;</span>
-            </div>
+      <section class="workspace section" id="practice">
+        <div class="section-heading"><div><div class="eyebrow">ИНТЕРАКТИВНАЯ ПРАКТИКА</div><h2>Пиши код и <em>смотри результат.</em></h2></div><p>Попробуй изменить пример. Нажми «Запустить», чтобы увидеть результат в окне справа.</p></div>
+        <div class="editor">
+          <div class="editor-head"><div><span class="editor-dot"></span> РЕДАКТОР КОДА</div><button id="reset-code">Сбросить пример ↺</button></div>
+          <div class="editor-grid"><div class="code-side"><label for="code-input">HTML / CSS / JS</label><textarea id="code-input" spellcheck="false" aria-label="Редактор HTML кода"></textarea><div class="editor-actions"><button class="btn btn-primary" id="run-code">▶ Запустить</button><span id="run-status">Готов к запуску</span></div></div><div class="output-side"><div class="output-label">ПРЕДПРОСМОТР</div><iframe id="preview-frame" title="Предпросмотр результата" sandbox="allow-scripts"></iframe></div></div>
         </div>
+      </section>
 
-        <!-- Текст -->
-        <div class="tag-category">
-            <h4>📝 Текст и форматирование</h4>
-            <div class="tag-list">
-                <span class="tag-item">&lt;h1&gt;-&lt;h6&gt;</span>
-                <span class="tag-item">&lt;p&gt;</span>
-                <span class="tag-item">&lt;br&gt;</span>
-                <span class="tag-item">&lt;hr&gt;</span>
-                <span class="tag-item">&lt;b&gt; / &lt;strong&gt;</span>
-                <span class="tag-item">&lt;i&gt; / &lt;em&gt;</span>
-                <span class="tag-item">&lt;u&gt;</span>
-                <span class="tag-item">&lt;mark&gt;</span>
-                <span class="tag-item">&lt;small&gt;</span>
-                <span class="tag-item">&lt;sub&gt; / &lt;sup&gt;</span>
-                <span class="tag-item">&lt;blockquote&gt;</span>
-                <span class="tag-item">&lt;code&gt;</span>
-                <span class="tag-item">&lt;pre&gt;</span>
-            </div>
-        </div>
-
-        <!-- Списки -->
-        <div class="tag-category">
-            <h4>📋 Списки</h4>
-            <div class="tag-list">
-                <span class="tag-item">&lt;ul&gt;</span>
-                <span class="tag-item">&lt;ol&gt;</span>
-                <span class="tag-item">&lt;li&gt;</span>
-                <span class="tag-item">&lt;dl&gt;</span>
-                <span class="tag-item">&lt;dt&gt;</span>
-                <span class="tag-item">&lt;dd&gt;</span>
-            </div>
-        </div>
-
-        <!-- Медиа и Ссылки -->
-        <div class="tag-category">
-            <h4>🖼️ Медиа и Ссылки</h4>
-            <div class="tag-list">
-                <span class="tag-item">&lt;a&gt;</span>
-                <span class="tag-item">&lt;img&gt;</span>
-                <span class="tag-item">&lt;figure&gt;</span>
-                <span class="tag-item">&lt;figcaption&gt;</span>
-                <span class="tag-item">&lt;audio&gt;</span>
-                <span class="tag-item">&lt;video&gt;</span>
-                <span class="tag-item">&lt;source&gt;</span>
-                <span class="tag-item">&lt;iframe&gt;</span>
-                <span class="tag-item">&lt;canvas&gt;</span>
-                <span class="tag-item">&lt;svg&gt;</span>
-            </div>
-        </div>
-
-        <!-- Таблицы -->
-        <div class="tag-category">
-            <h4>📊 Таблицы</h4>
-            <div class="tag-list">
-                <span class="tag-item">&lt;table&gt;</span>
-                <span class="tag-item">&lt;thead&gt;</span>
-                <span class="tag-item">&lt;tbody&gt;</span>
-                <span class="tag-item">&lt;tfoot&gt;</span>
-                <span class="tag-item">&lt;tr&gt;</span>
-                <span class="tag-item">&lt;th&gt;</span>
-                <span class="tag-item">&lt;td&gt;</span>
-                <span class="tag-item">&lt;caption&gt;</span>
-            </div>
-        </div>
-
-        <!-- Формы -->
-        <div class="tag-category">
-            <h4>⌨️ Формы и Ввод</h4>
-            <div class="tag-list">
-                <span class="tag-item">&lt;form&gt;</span>
-                <span class="tag-item">&lt;input&gt;</span>
-                <span class="tag-item">&lt;textarea&gt;</span>
-                <span class="tag-item">&lt;button&gt;</span>
-                <span class="tag-item">&lt;select&gt;</span>
-                <span class="tag-item">&lt;option&gt;</span>
-                <span class="tag-item">&lt;label&gt;</span>
-                <span class="tag-item">&lt;fieldset&gt;</span>
-                <span class="tag-item">&lt;legend&gt;</span>
-                <span class="tag-item">&lt;output&gt;</span>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- НОВАЯ СЕКЦИЯ: КОНСТРУКТОР САЙТА -->
-<section id="constructor" style="width: 1200px; margin: 60px auto;">
-    <div class="thems">
-        <h2>🛠️ Конструктор сайта</h2>
-        <p style="margin-bottom: 30px; color: #aaa;">Создавайте HTML-структуру визуально и получайте готовый код</p>
-
-        <div class="constructor-container">
-            <!-- Левая панель: элементы управления -->
-            <div class="constructor-panel">
-                <h3>Добавить элемент</h3>
-
-                <div class="element-buttons">
-                    <button class="element-btn" data-tag="h1">H1 Заголовок</button>
-                    <button class="element-btn" data-tag="h2">H2 Заголовок</button>
-                    <button class="element-btn" data-tag="h3">H3 Заголовок</button>
-                    <button class="element-btn" data-tag="p">Абзац</button>
-                    <button class="element-btn" data-tag="a">Ссылка</button>
-                    <button class="element-btn" data-tag="img">Картинка</button>
-                    <button class="element-btn" data-tag="button">Кнопка</button>
-                    <button class="element-btn" data-tag="div">Div блок</button>
-                    <button class="element-btn" data-tag="ul">Список UL</button>
-                    <button class="element-btn" data-tag="ol">Список OL</button>
-                    <button class="element-btn" data-tag="table">Таблица</button>
-                    <button class="element-btn" data-tag="input">Поле ввода</button>
-                </div>
-
-                <div class="properties-panel" id="propertiesPanel" style="display: none;">
-                    <h3>Свойства элемента</h3>
-                    <input type="text" class="property-input" id="propText" placeholder="Текст содержимого">
-                    <input type="text" class="property-input" id="propClass" placeholder="CSS класс">
-                    <input type="text" class="property-input" id="propId" placeholder="ID элемента">
-                    <input type="text" class="property-input" id="propHref" placeholder="URL ссылки (href)">
-                    <input type="text" class="property-input" id="propSrc" placeholder="URL изображения (src)">
-                    <input type="text" class="property-input" id="propAlt" placeholder="Alt текст">
-                    <button class="action-btn primary" onclick="updateElement()">Обновить элемент</button>
-                </div>
-
-                <div class="action-buttons">
-                    <button class="action-btn secondary" onclick="clearPreview()">Очистить всё</button>
-                    <button class="action-btn secondary" onclick="copyCode()">Копировать код</button>
-                </div>
-            </div>
-
-            <!-- Правая панель: превью и код -->
-            <div>
-                <div class="constructor-panel" style="margin-bottom: 20px;">
-                    <h3>Предпросмотр</h3>
-                    <div class="preview-area" id="previewArea">
-                        <p style="color: #999; text-align: center; margin-top: 150px;">Нажмите на кнопки слева, чтобы добавить элементы</p>
-                    </div>
-                </div>
-
-                <div class="constructor-panel">
-                    <h3>HTML код</h3>
-                    <div class="code-output" id="codeOutput">&lt;!-- Код появится здесь --&gt;</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="themes">
-    <div class="thems">
-        <h2>Выберите тему</h2>
-        <div class="theme-buttons">
-            <button data-theme="limestyle.css">Lime Theme</button>
-            <!-- Исправлена опечатка в названии файла -->
-            <button data-theme="scarlerstyle.css">Scarlet Theme</button>
-            <button data-theme="neon.css">Neon Theme</button>
-            <button data-theme="gold.css">Gold Theme</button>
-        </div>
-    </div>
-</section>
-
-<script>
-    const theme = document.getElementById("theme");
-
-    // Загружаем сохранённую тему
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-        theme.href = savedTheme;
-    }
-
-    // Назначаем обработчики всем кнопкам
-    document.querySelectorAll(".theme-buttons button").forEach(button => {
-        button.addEventListener("click", () => {
-            const file = button.dataset.theme;
-            theme.href = file;
-            localStorage.setItem("theme", file);
-        });
-    });
-
-    // Логика конструктора
-    let selectedElement = null;
-    const previewArea = document.getElementById('previewArea');
-    const codeOutput = document.getElementById('codeOutput');
-    const propertiesPanel = document.getElementById('propertiesPanel');
-
-    // Добавление элементов
-    document.querySelectorAll('.element-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const tag = btn.dataset.tag;
-            addElement(tag);
-        });
-    });
-
-    function addElement(tag) {
-        let element;
-
-        switch(tag) {
-            case 'h1':
-                element = document.createElement('h1');
-                element.textContent = 'Заголовок H1';
-                break;
-            case 'h2':
-                element = document.createElement('h2');
-                element.textContent = 'Заголовок H2';
-                break;
-            case 'h3':
-                element = document.createElement('h3');
-                element.textContent = 'Заголовок H3';
-                break;
-            case 'p':
-                element = document.createElement('p');
-                element.textContent = 'Это абзац текста. Нажмите, чтобы редактировать.';
-                break;
-            case 'a':
-                element = document.createElement('a');
-                element.href = '#';
-                element.textContent = 'Ссылка';
-                break;
-            case 'img':
-                element = document.createElement('img');
-                element.src = 'https://via.placeholder.com/300x200';
-                element.alt = 'Placeholder';
-                element.style.maxWidth = '100%';
-                break;
-            case 'button':
-                element = document.createElement('button');
-                element.textContent = 'Кнопка';
-                element.style.padding = '10px 20px';
-                element.style.margin = '5px';
-                break;
-            case 'div':
-                element = document.createElement('div');
-                element.style.padding = '20px';
-                element.style.margin = '10px 0';
-                element.style.border = '1px dashed #ccc';
-                element.textContent = 'Div контейнер';
-                break;
-            case 'ul':
-                element = document.createElement('ul');
-                const li1 = document.createElement('li');
-                li1.textContent = 'Элемент списка 1';
-                const li2 = document.createElement('li');
-                li2.textContent = 'Элемент списка 2';
-                element.appendChild(li1);
-                element.appendChild(li2);
-                break;
-            case 'ol':
-                element = document.createElement('ol');
-                const oli1 = document.createElement('li');
-                oli1.textContent = 'Первый пункт';
-                const oli2 = document.createElement('li');
-                oli2.textContent = 'Второй пункт';
-                element.appendChild(oli1);
-                element.appendChild(oli2);
-                break;
-            case 'table':
-                element = document.createElement('table');
-                element.style.width = '100%';
-                element.style.borderCollapse = 'collapse';
-                const thead = document.createElement('thead');
-                const tr1 = document.createElement('tr');
-                const th1 = document.createElement('th');
-                th1.textContent = 'Заголовок 1';
-                th1.style.border = '1px solid #ddd';
-                th1.style.padding = '8px';
-                const th2 = document.createElement('th');
-                th2.textContent = 'Заголовок 2';
-                th2.style.border = '1px solid #ddd';
-                th2.style.padding = '8px';
-                tr1.appendChild(th1);
-                tr1.appendChild(th2);
-                thead.appendChild(tr1);
-                element.appendChild(thead);
-                const tbody = document.createElement('tbody');
-                const tr2 = document.createElement('tr');
-                const td1 = document.createElement('td');
-                td1.textContent = 'Данные 1';
-                td1.style.border = '1px solid #ddd';
-                td1.style.padding = '8px';
-                const td2 = document.createElement('td');
-                td2.textContent = 'Данные 2';
-                td2.style.border = '1px solid #ddd';
-                td2.style.padding = '8px';
-                tr2.appendChild(td1);
-                tr2.appendChild(td2);
-                tbody.appendChild(tr2);
-                element.appendChild(tbody);
-                break;
-            case 'input':
-                element = document.createElement('input');
-                element.type = 'text';
-                element.placeholder = 'Введите текст';
-                element.style.padding = '8px';
-                element.style.margin = '5px 0';
-                element.style.width = '100%';
-                break;
-        }
-
-        if (element) {
-            element.style.cursor = 'pointer';
-            element.addEventListener('click', (e) => {
-                e.stopPropagation();
-                selectElement(element);
-            });
-
-            // Если это первый элемент, очищаем placeholder
-            if (previewArea.querySelector('p[style*="text-align: center"]')) {
-                previewArea.innerHTML = '';
-            }
-
-            previewArea.appendChild(element);
-            updateCode();
-        }
-    }
-
-    function selectElement(element) {
-        // Убираем выделение с предыдущего элемента
-        if (selectedElement) {
-            selectedElement.classList.remove('selected-element');
-        }
-
-        selectedElement = element;
-        selectedElement.classList.add('selected-element');
-
-        // Показываем панель свойств
-        propertiesPanel.style.display = 'block';
-
-        // Заполняем поля текущими значениями
-        document.getElementById('propText').value = element.textContent || '';
-        document.getElementById('propClass').value = element.className || '';
-        document.getElementById('propId').value = element.id || '';
-        document.getElementById('propHref').value = element.href || '';
-        document.getElementById('propSrc').value = element.src || '';
-        document.getElementById('propAlt').value = element.alt || '';
-    }
-
-    function updateElement() {
-        if (!selectedElement) return;
-
-        const text = document.getElementById('propText').value;
-        const className = document.getElementById('propClass').value;
-        const id = document.getElementById('propId').value;
-        const href = document.getElementById('propHref').value;
-        const src = document.getElementById('propSrc').value;
-        const alt = document.getElementById('propAlt').value;
-
-        if (text && selectedElement.tagName !== 'IMG' && selectedElement.tagName !== 'INPUT') {
-            selectedElement.textContent = text;
-        }
-        if (className) selectedElement.className = className;
-        if (id) selectedElement.id = id;
-        if (href && selectedElement.tagName === 'A') selectedElement.href = href;
-        if (src && selectedElement.tagName === 'IMG') selectedElement.src = src;
-        if (alt && selectedElement.tagName === 'IMG') selectedElement.alt = alt;
-
-        updateCode();
-    }
-
-    function updateCode() {
-        const html = previewArea.innerHTML;
-        // Форматируем код для лучшего чтения
-        const formatted = formatHTML(html);
-        codeOutput.textContent = formatted || '<!-- Код появится здесь -->';
-    }
-
-    function formatHTML(html) {
-        let formatted = '';
-        let indent = 0;
-        const tab = '  ';
-
-        html.split(/>\s*</).forEach(function(node) {
-            if (node.match(/^\/\w/)) indent--;
-            formatted += new Array(indent + 1).join(tab) + '<' + node + '>\r\n';
-            if (node.match(/^<?\w[^>]*[^\/]$/) && !node.startsWith("input") && !node.startsWith("img") && !node.startsWith("br")) indent++;
-        });
-
-        return formatted.substring(1, formatted.length - 3);
-    }
-
-    function clearPreview() {
-        previewArea.innerHTML = '<p style="color: #999; text-align: center; margin-top: 150px;">Нажмите на кнопки слева, чтобы добавить элементы</p>';
-        codeOutput.textContent = '<!-- Код появится здесь -->';
-        selectedElement = null;
-        propertiesPanel.style.display = 'none';
-    }
-
-    function copyCode() {
-        const code = codeOutput.textContent;
-        navigator.clipboard.writeText(code).then(() => {
-            alert('Код скопирован в буфер обмена!');
-        }).catch(err => {
-            console.error('Ошибка копирования:', err);
-        });
-    }
-
-    // Клик вне элемента снимает выделение
-    previewArea.addEventListener('click', (e) => {
-        if (e.target === previewArea) {
-            if (selectedElement) {
-                selectedElement.classList.remove('selected-element');
-                selectedElement = null;
-                propertiesPanel.style.display = 'none';
-            }
-        }
-    });
-</script>
-<footer style="text-align: center; padding: 30px; margin-top: 60px; border-top: 1px solid rgba(255,255,255,0.1);">
-    <p style="margin: 0; opacity: 0.7;">
-        © 2026 HTML Guide. Все права защищены.
-    </p>
-    <p style="margin: 10px 0 0 0; opacity: 0.5; font-size: 14px;">
-        Разработчик: Илья Куценко
-    </p>
-</footer>
+      <section class="section projects">
+        <div class="section-heading"><div><div class="eyebrow">ЧТО ТЫ СОЗДАШЬ</div><h2>Знания превращаются в <em>проекты.</em></h2></div><p>Закрепляй темы на небольших работах и постепенно собирай собственное портфолио.</p></div>
+        <div class="project-grid"><article><span>01 / HTML</span><h3>Страница о себе</h3><p>Структура, заголовки, изображения и ссылки.</p></article><article><span>02 / HTML + CSS</span><h3>Карточка профиля</h3><p>Цвета, типографика, отступы и адаптивность.</p></article><article><span>03 / HTML + CSS + JS</span><h3>Интерактивный список</h3><p>Кнопки, события и изменение содержимого страницы.</p></article></div>
+      </section>
+      <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">&lt;/&gt;</span><span>web<span class="brand-accent">start</span></span></a><span>Учись. Практикуйся. Создавай.</span><a href="https://github.com/Harvus-son/stadyhtml">Исходный код ↗</a></footer>
+    </main>
+  </div>
+  <div class="lesson-overlay" id="lesson-overlay" aria-hidden="true"><div class="lesson-panel"><button class="close-lesson" id="close-lesson" aria-label="Закрыть урок">×</button><div id="lesson-content"></div></div></div>
 </body>
 </html>
